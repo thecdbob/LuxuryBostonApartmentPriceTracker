@@ -1,0 +1,47 @@
+This app will monitor the price of apartments in your area, and find the cheapest time of year to buy a new apartment.
+
+Overiew of what will be used:
+- Google Maps API
+- Google Places API
+- Google Distance Matrix API
+- Google Maps Geocoding API
+- Google Maps Directions API
+- Google Maps Static Maps API
+- Google Maps Time Zone API
+- Google Maps Elevation API
+- Google Maps Geolocation API
+- Google Maps Geocoding API
+- Google Maps Directions API
+
+    Basics:
+    Want to get a website that lists appartment prices in your area?
+    If there is protection you will need to use selenium to scrape the website.
+    Parse the website to get the price of the apartment.
+    Make it into a standized format so it's stored as a time series (boomer)
+    Store the data in a database.
+
+    sites to use
+    https://jmaldencenter.com/floor-plans/
+    https://500oceanavenue.com/floorplans/
+    https://altarevolution.com/floor-plans/
+    https://www.thegraphiclofts.com/charlestown/the-graphic-lofts/conventional/
+    """
+
+    first step get all units using parsed as json from first link of all units
+
+    the results are not currently in the linux standard format, windows
+
+
+    have results for one unit of jmalden, need to get all units, then move forward with storing it within a database
+
+    replace json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'][i] with variables
+    """
+
+    we need to pass in, unit id, selectedunitsiteid, and floorplan id
+
+    what to add for unit pricing, so json data will change, so we need to pass values into it
+    params are the same, headers are the same
+
+    move in date needs to dynamic
+
+    think about json data and whether or not it makes sense to use i with that variable and then to pass that in as data with that object
