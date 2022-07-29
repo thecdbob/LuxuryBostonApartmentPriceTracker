@@ -5,7 +5,10 @@ import json
 from random import choices
 from string import ascii_uppercase, ascii_lowercase, digits
 import requests
+import logging
 
+logging.basicConfig(filename='logging.log', level=logging.DEBUG)
+logging.warning('Test Logging Message')
 
 population = ascii_uppercase + ascii_lowercase + digits
 def char_gen(n):
@@ -66,13 +69,6 @@ if response.status_code == 200:
     FloorPlanLength = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'])
     #print(FloorPlanLength)
 
-
-
-    # take the name, despcription, bedrooms, bathrooms, squarefeet, minpricerange, maxpricerange from each floor plan
-    # create a list that stores objects of the class FloorPlan
-    # store the name, description, bedrooms, bathrooms, squarefeet, minpricerange, maxpricerange in the object
-    # print the object
-
     #create a list that stores objects of the class FloorPlan
     #create an object of the class FloorPlan
     #store the name, description, bedrooms, bathrooms, squarefeet, minpricerange, maxpricerange in the object
@@ -81,7 +77,9 @@ if response.status_code == 200:
 
     siteid = '4527024' #not sure if this changes or not (pmalden)
     selectedunitid = siteid
-    print(siteid)
+
+    #for testing purposes
+    #print(siteid)
     #  we need to pass in, unit id, selectedunitsiteid, and floorplan id
     for i in range(FloorPlanLength):
         for j in range(len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'][i]['UnitIds'])):
@@ -102,7 +100,7 @@ if response.status_code == 200:
     #pass in objects to find pricing next
 
     #create list of objects to use for each unit's price
-    UnitPriceList = []
+    #UnitPriceList = []
 
     for FloorPlan in FloorPlanList:
         json_data = {
@@ -139,33 +137,29 @@ if response.status_code == 200:
             #try catch (needs to be fixed in the future)
             try:
                 MonthlyCostLength = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'])
-                MonthlyCostList = []
+                MonthlyCostDict = {}
                 for i in range(MonthlyCostLength):
-                    MonthlyCost = {
-                        'Cost':
-                            json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
-                                i]['MonthlyRent'],
-                        'Months':
-                            json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
-                                i]['DurationInMonths'],
-                        'TimeStamp': Timestamp,
-                    }
-                    MonthlyCostList.append(MonthlyCost)
+                    Months = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                            'PricePlans'][i]['DurationInMonths']
+                    Cost = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
+                            i]['MonthlyRent']
+                    MonthlyCostDict.update({Months: Cost})
                 # used for initially creating the code
-                # print(json.dumps(json_data, indent=4))
-
-                UnitPriceList.append(MonthlyCostList)
-
-                for i in range(len(MonthlyCostList)):
-                    print(MonthlyCostList[i])
-                    print('\n')
+                #print(json.dumps(json_data, indent=4))
+                FloorPlanList[i].update(MonthlyCostDict)
 
             except:
-                print('Move in Date invalid ' + FloorPlan['UnitID'])
+                #delete unit if unable to find pricing
+                logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
+
+            print(len(FloorPlanList))
+            for i in range(len(FloorPlanList)):
+                print(FloorPlanList[i])
+                print('\n')
 
         else:
-            print('uh oh')
+            logging.error('Non 200 response in response1')
 elif response.status_code == 401:
-    print('401 error')
+    logging.error('401 error')
 else:
-    print('Not 401 or 200 response')
+    logging.error('Not 401 or 200 response')
