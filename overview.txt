@@ -54,3 +54,5 @@ Overiew of what will be used:
     next dictionary object when you get back
 
     mongodb is currently complaing about the lack of an extension
+
+    Mongodb implimentation now works, add support for second rental site now
