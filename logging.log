@@ -1909,3 +1909,274 @@ DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.A
 ERROR:root:Move in Date invalid 153
 INFO:root:Updated prices for Floor Plan List
 ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=a5be3db6-465b-4a9d-aebe-b3a7fc2ff361 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=a5be3db6-465b-4a9d-aebe-b3a7fc2ff361 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=a5be3db6-465b-4a9d-aebe-b3a7fc2ff361 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=a5be3db6-465b-4a9d-aebe-b3a7fc2ff361 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=a5be3db6-465b-4a9d-aebe-b3a7fc2ff361 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=a5be3db6-465b-4a9d-aebe-b3a7fc2ff361 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6aa2fb72-a5cf-4035-899c-02d2b32aa889 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6aa2fb72-a5cf-4035-899c-02d2b32aa889 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6aa2fb72-a5cf-4035-899c-02d2b32aa889 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6aa2fb72-a5cf-4035-899c-02d2b32aa889 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6aa2fb72-a5cf-4035-899c-02d2b32aa889 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6aa2fb72-a5cf-4035-899c-02d2b32aa889 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=b165eb08-b539-46c2-a751-00437d5c44dd HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=b165eb08-b539-46c2-a751-00437d5c44dd HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=b165eb08-b539-46c2-a751-00437d5c44dd HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=b165eb08-b539-46c2-a751-00437d5c44dd HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=b165eb08-b539-46c2-a751-00437d5c44dd HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=b165eb08-b539-46c2-a751-00437d5c44dd HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=d02b5651-cfc8-41a7-97df-4e72459d37ac HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=d02b5651-cfc8-41a7-97df-4e72459d37ac HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=d02b5651-cfc8-41a7-97df-4e72459d37ac HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=d02b5651-cfc8-41a7-97df-4e72459d37ac HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=d02b5651-cfc8-41a7-97df-4e72459d37ac HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=d02b5651-cfc8-41a7-97df-4e72459d37ac HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6d43b5db-59ff-411e-9808-6c312ba9ac39 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6d43b5db-59ff-411e-9808-6c312ba9ac39 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6d43b5db-59ff-411e-9808-6c312ba9ac39 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6d43b5db-59ff-411e-9808-6c312ba9ac39 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6d43b5db-59ff-411e-9808-6c312ba9ac39 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6d43b5db-59ff-411e-9808-6c312ba9ac39 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4c5e8afa-e8bb-4244-8913-5e83c528ae3a HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4c5e8afa-e8bb-4244-8913-5e83c528ae3a HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4c5e8afa-e8bb-4244-8913-5e83c528ae3a HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4c5e8afa-e8bb-4244-8913-5e83c528ae3a HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4c5e8afa-e8bb-4244-8913-5e83c528ae3a HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4c5e8afa-e8bb-4244-8913-5e83c528ae3a HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4806de25-0451-4074-9af6-a50ceb388c09 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4806de25-0451-4074-9af6-a50ceb388c09 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4806de25-0451-4074-9af6-a50ceb388c09 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4806de25-0451-4074-9af6-a50ceb388c09 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4806de25-0451-4074-9af6-a50ceb388c09 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=4806de25-0451-4074-9af6-a50ceb388c09 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6a6e19ec-d298-4ebe-bf68-51633d3c9a28 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6a6e19ec-d298-4ebe-bf68-51633d3c9a28 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6a6e19ec-d298-4ebe-bf68-51633d3c9a28 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6a6e19ec-d298-4ebe-bf68-51633d3c9a28 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6a6e19ec-d298-4ebe-bf68-51633d3c9a28 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=6a6e19ec-d298-4ebe-bf68-51633d3c9a28 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=422e1193-95f1-4707-8bd4-8d9036deddc5 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=422e1193-95f1-4707-8bd4-8d9036deddc5 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=422e1193-95f1-4707-8bd4-8d9036deddc5 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=422e1193-95f1-4707-8bd4-8d9036deddc5 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=422e1193-95f1-4707-8bd4-8d9036deddc5 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=422e1193-95f1-4707-8bd4-8d9036deddc5 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=74fb2a8d-b3f3-44ca-abaa-9f9a3e3061c8 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=74fb2a8d-b3f3-44ca-abaa-9f9a3e3061c8 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=74fb2a8d-b3f3-44ca-abaa-9f9a3e3061c8 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=74fb2a8d-b3f3-44ca-abaa-9f9a3e3061c8 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=74fb2a8d-b3f3-44ca-abaa-9f9a3e3061c8 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=74fb2a8d-b3f3-44ca-abaa-9f9a3e3061c8 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=8b7ce6f9-c32b-40e5-98f4-e2a2d255abf9 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=8b7ce6f9-c32b-40e5-98f4-e2a2d255abf9 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=8b7ce6f9-c32b-40e5-98f4-e2a2d255abf9 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=8b7ce6f9-c32b-40e5-98f4-e2a2d255abf9 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=8b7ce6f9-c32b-40e5-98f4-e2a2d255abf9 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=8b7ce6f9-c32b-40e5-98f4-e2a2d255abf9 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+ERROR:root:Unable to insert into MongoDB
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=9f32261f-4c14-4403-9109-4dba73ea11d5 HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=9f32261f-4c14-4403-9109-4dba73ea11d5 HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=9f32261f-4c14-4403-9109-4dba73ea11d5 HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=9f32261f-4c14-4403-9109-4dba73ea11d5 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=9f32261f-4c14-4403-9109-4dba73ea11d5 HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=9f32261f-4c14-4403-9109-4dba73ea11d5 HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List
+INFO:root:Running through program
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "GET /RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=c050d336-6fb0-424d-b52d-0258c11d68dd HTTP/1.1" 200 62949
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=c050d336-6fb0-424d-b52d-0258c11d68dd HTTP/1.1" 200 8295
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=c050d336-6fb0-424d-b52d-0258c11d68dd HTTP/1.1" 200 8297
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=c050d336-6fb0-424d-b52d-0258c11d68dd HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 136
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=c050d336-6fb0-424d-b52d-0258c11d68dd HTTP/1.1" 200 8233
+INFO:root:Updated prices for Floor Plan List
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): leasing.realpage.com:443
+DEBUG:urllib3.connectionpool:https://leasing.realpage.com:443 "PUT /RP.Leasing.AppService.WebHost/appstate/v1/?BpmId=OLL.WorkflowStartUp&BpmSequence=0&LogSequence=3&ClientSessionID=c050d336-6fb0-424d-b52d-0258c11d68dd HTTP/1.1" 200 6601
+ERROR:root:Move in Date invalid 153
+INFO:root:Updated prices for Floor Plan List

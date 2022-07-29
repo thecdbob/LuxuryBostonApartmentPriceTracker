@@ -130,8 +130,8 @@ if response.status_code == 200:
                 MonthlyCostLength = len(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'])
                 MonthlyCostDict = {}
                 for i in range(MonthlyCostLength):
-                    Months = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
-                            'PricePlans'][i]['DurationInMonths']
+                    Months = str(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                            'PricePlans'][i]['DurationInMonths'])
                     Cost = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
                             i]['MonthlyRent']
                     MonthlyCostDict.update({Months: Cost})
@@ -153,7 +153,11 @@ if response.status_code == 200:
     try:
         #connect to mongodb free database
         #currently complaing about pymongo with the srv extra
-        client = MongoClient('mongodb+srv://cdbob:<fgt5KPT@juq_vzn2xzw>@cluster0.yspvvbs.mongodb.net/?retryWrites=true&w=majority')
+
+        client = pymongo.MongoClient("mongodb+srv://cdbob:xca8xbp9vxa.gnt1DZR@cluster0.yspvvbs.mongodb.net/?retryWrites=true&w=majority")
+        db = client.test
+
+        #"mongodb+srv://cdbob:xca8xbp9vxagnt1DZR@cluster0.yspvvbs.mongodb.net/?retryWrites=true&w=majority"
         db = client.free
         collection = db.floorplans
         collection.insert_many(FloorPlanList)
