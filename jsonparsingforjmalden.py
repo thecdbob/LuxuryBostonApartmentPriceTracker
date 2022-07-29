@@ -7,6 +7,7 @@ from string import ascii_uppercase, ascii_lowercase, digits
 import requests
 import logging
 import pymongo
+from pymongo import MongoClient
 
 logging.basicConfig(filename='logging.log', level=logging.DEBUG)
 logging.info('Running through program')
@@ -148,6 +149,20 @@ if response.status_code == 200:
             logging.error('Non 200 response in response1')
     print('Updated prices for Floor Plan List')
     print(FloorPlanList)
+
+    try:
+        #connect to mongodb free database
+        #currently complaing about pymongo with the srv extra
+        client = MongoClient('mongodb+srv://cdbob:<fgt5KPT@juq_vzn2xzw>@cluster0.yspvvbs.mongodb.net/?retryWrites=true&w=majority')
+        db = client.free
+        collection = db.floorplans
+        collection.insert_many(FloorPlanList)
+        print('Inserted into MongoDB')
+    except:
+        print('Unable to insert into MongoDB')
+        logging.error('Unable to insert into MongoDB')
+        raise
+
 elif response.status_code == 401:
         logging.error('401 error')
 

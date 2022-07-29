@@ -52,3 +52,5 @@ Overiew of what will be used:
     fix prints and logging to do both in one statement
 
     next dictionary object when you get back
+
+    mongodb is currently complaing about the lack of an extension
