@@ -8,7 +8,7 @@ import requests
 import logging
 
 logging.basicConfig(filename='logging.log', level=logging.DEBUG)
-logging.warning('Test Logging Message')
+logging.info('Running through program')
 
 population = ascii_uppercase + ascii_lowercase + digits
 def char_gen(n):
@@ -82,20 +82,19 @@ if response.status_code == 200:
     #print(siteid)
     #  we need to pass in, unit id, selectedunitsiteid, and floorplan id
     for i in range(FloorPlanLength):
-        for j in range(len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'][i]['UnitIds'])):
+        #if multiple units parse all of them
+        for j in range(len(Floorplans[i]['UnitIds'])):
             FloorPlan = {
                 'Name': Floorplans[i]['Name'],
                 'ID' : Floorplans[i]['Id'],
-
-                #this needs to go through the j loop not the i loop
                 'UnitID': Floorplans[i]['UnitIds'][j],
                 'TimeStamp': Timestamp,
             }
             FloorPlanList.append(FloorPlan)
 
-    for i in range(len(FloorPlanList)):
-        print(FloorPlanList[i])
-        print('\n')
+    #for i in range(len(FloorPlanList)):
+        #print(FloorPlanList[i])
+        #print('\n')
 
     #pass in objects to find pricing next
 
@@ -112,54 +111,49 @@ if response.status_code == 200:
             'LeasingIntent': 'SearchUnit',
             'AppStateParams': {
                 'FloorplanId': '8597091',
-                'MoveInDate': '07/30/2022', #change to dynamic date
+                'MoveInDate': '07/31/2022', #change to dynamic date
                 'UnitId': FloorPlan['UnitID'],
                 'SelectedUnitSiteId': selectedunitid,
             },
         }
+        print(FloorPlanList[2])
 
         response1 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/', params=params, headers=headers, json=json_data)
 
         if response1.status_code == 200:
             # convert the response to json
             json_data = response1.json()
-            #print(FloorPlan['UnitID'])
-
-            # format the json data
-
-            # used for initially creating the code
-            #print(json.dumps(json_data, indent=4))
-
-            #verify is the line exists (it should) not sure why it doesn't work
-
-
 
             #try catch (needs to be fixed in the future)
             try:
                 MonthlyCostLength = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'])
                 MonthlyCostDict = {}
+                print('break1')
                 for i in range(MonthlyCostLength):
                     Months = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
                             'PricePlans'][i]['DurationInMonths']
                     Cost = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
                             i]['MonthlyRent']
                     MonthlyCostDict.update({Months: Cost})
-                # used for initially creating the code
-                #print(json.dumps(json_data, indent=4))
-                FloorPlanList[i].update(MonthlyCostDict)
+                print('break2')
+                FloorPlanList[i].append(MonthlyCostDict)
+                print('added data to' + FloorPlanList[i]['Name'])
 
             except:
+                print('break')
                 #delete unit if unable to find pricing
                 logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
 
-            print(len(FloorPlanList))
-            for i in range(len(FloorPlanList)):
-                print(FloorPlanList[i])
-                print('\n')
+
+            logging.info('Updated prices for Floor Plan List')
+            print('Updated prices for Floor Plan List')
+            print(FloorPlanList[1])
 
         else:
             logging.error('Non 200 response in response1')
+
 elif response.status_code == 401:
-    logging.error('401 error')
+        logging.error('401 error')
+
 else:
     logging.error('Not 401 or 200 response')

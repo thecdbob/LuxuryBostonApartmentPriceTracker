@@ -48,3 +48,5 @@ Overiew of what will be used:
 
     currently have issues with the date of possenion within json data, a workaround is to use the date of possession as the date of the json data that uses
     a try except block, you should understand a better implimentation of this, impliment it in the future and then make the date dynamic
+
+    fix prints and logging to do both in one statement
