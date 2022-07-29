@@ -66,7 +66,7 @@ if response.status_code == 200:
     #Descriptions = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Description']
 
     # count number of elements in the json data for 'FloorPlans'
-    FloorPlanLength = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'])
+    NumberOfFloorPlans = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'])
     #print(FloorPlanLength)
 
     #create a list that stores objects of the class FloorPlan
@@ -81,7 +81,7 @@ if response.status_code == 200:
     #for testing purposes
     #print(siteid)
     #  we need to pass in, unit id, selectedunitsiteid, and floorplan id
-    for i in range(FloorPlanLength):
+    for i in range(NumberOfFloorPlans):
         #if multiple units parse all of them
         for j in range(len(Floorplans[i]['UnitIds'])):
             FloorPlan = {
@@ -116,42 +116,48 @@ if response.status_code == 200:
                 'SelectedUnitSiteId': selectedunitid,
             },
         }
-        print(FloorPlanList[2])
 
         response1 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/', params=params, headers=headers, json=json_data)
 
         if response1.status_code == 200:
             # convert the response to json
-            json_data = response1.json()
+            json_data1 = response1.json()
 
             #try catch (needs to be fixed in the future)
             try:
-                MonthlyCostLength = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'])
+                MonthlyCostLength = len(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'])
                 MonthlyCostDict = {}
-                print('break1')
                 for i in range(MonthlyCostLength):
-                    Months = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                    Months = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
                             'PricePlans'][i]['DurationInMonths']
-                    Cost = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
+                    Cost = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
                             i]['MonthlyRent']
                     MonthlyCostDict.update({Months: Cost})
-                print('break2')
-                FloorPlanList[i].append(MonthlyCostDict)
-                print('added data to' + FloorPlanList[i]['Name'])
+                #print(MonthlyCostDict)
+                print('preitem')
+                #print(FloorPlanList)
+                k = FloorPlan
+                #print(k)
+                print('post iterator')
+                #print(FloorPlanList[FloorPlan])
+                print('post item')
+                FloorPlan.update(MonthlyCostDict) #figure out how to nest this inside the other dictioanry when you get back from lunch
+                print('post floor plan append')
+                print(FloorPlan)
 
             except:
-                print('break')
+                logging.info('Nested except block')
+                print('nested except block')
                 #delete unit if unable to find pricing
                 logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
 
 
             logging.info('Updated prices for Floor Plan List')
             print('Updated prices for Floor Plan List')
-            print(FloorPlanList[1])
 
         else:
             logging.error('Non 200 response in response1')
-
+    print(len(FloorPlanList))
 elif response.status_code == 401:
         logging.error('401 error')
 
