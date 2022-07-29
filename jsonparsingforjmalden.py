@@ -6,6 +6,7 @@ from random import choices
 from string import ascii_uppercase, ascii_lowercase, digits
 import requests
 import logging
+import pymongo
 
 logging.basicConfig(filename='logging.log', level=logging.DEBUG)
 logging.info('Running through program')
@@ -133,31 +134,20 @@ if response.status_code == 200:
                     Cost = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
                             i]['MonthlyRent']
                     MonthlyCostDict.update({Months: Cost})
-                #print(MonthlyCostDict)
-                print('preitem')
-                #print(FloorPlanList)
-                k = FloorPlan
-                #print(k)
-                print('post iterator')
-                #print(FloorPlanList[FloorPlan])
-                print('post item')
-                FloorPlan.update(MonthlyCostDict) #figure out how to nest this inside the other dictioanry when you get back from lunch
-                print('post floor plan append')
-                print(FloorPlan)
+                FloorPlan['RentTermPrice'] = MonthlyCostDict
 
             except:
-                logging.info('Nested except block')
-                print('nested except block')
                 #delete unit if unable to find pricing
                 logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
-
+                FloorPlanList.remove(FloorPlan)
 
             logging.info('Updated prices for Floor Plan List')
-            print('Updated prices for Floor Plan List')
+
 
         else:
             logging.error('Non 200 response in response1')
-    print(len(FloorPlanList))
+    print('Updated prices for Floor Plan List')
+    print(FloorPlanList)
 elif response.status_code == 401:
         logging.error('401 error')
 
