@@ -2,10 +2,8 @@ import time
 import datetime
 import base64
 import uuid
-import json
 from random import choices
 from string import ascii_uppercase, ascii_lowercase, digits
-import requests
 import logging
 import pymongo
 import sys
