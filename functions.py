@@ -13,14 +13,11 @@ from pymongo import MongoClient
 
 EpochTimeInt = int(time.time())
 EpochTimeString = str(EpochTimeInt)
+dayinseconds = 86400
 
 def epoch_to_date(epoch_time):
     return datetime.datetime.utcfromtimestamp(epoch_time).strftime('%m/%d/%Y')
 
-currenttime = epoch_to_date(EpochTimeInt)
-
-print(type(currenttime))
-
-print(currenttime)
-
-#add days to current time
+#interates through current data to two weeks beyond
+for i in range(14):
+    print(epoch_to_date(EpochTimeInt + dayinseconds*i))
