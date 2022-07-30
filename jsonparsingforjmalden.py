@@ -1,6 +1,6 @@
 import requests
 
-#file where functions are stored
+# file where functions are stored
 import functions
 
 functions.logging.info('Running through program')
@@ -18,7 +18,8 @@ headers = {
     'sec-fetch-dest': 'empty',
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'same-site',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                  '(KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
     'xyz': functions.token,
 }
 
@@ -29,7 +30,8 @@ params = {
     'ClientSessionID': functions.session_id,
 }
 
-response = requests.get('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/', params=params, headers=headers)
+response = requests.get('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/',
+                        params=params, headers=headers)
 
 if response.status_code == 200:
     # convert the response to json
@@ -38,7 +40,7 @@ if response.status_code == 200:
     # format the json data
 
     # used for initially creating the code
-    #print(json.dumps(json_data, indent=4))
+    # print(json.dumps(json_data, indent=4))
 
     # variables for to get names for pricing
 
@@ -47,26 +49,27 @@ if response.status_code == 200:
 
     # count number of elements in the json data for 'FloorPlans'
     NumberOfFloorPlans = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'])
-    #print(FloorPlanLength)
+    # print(FloorPlanLength)
 
-    #create a list that stores objects of the class FloorPlan
-    #create an object of the class FloorPlan
-    #store the name, description, bedrooms, bathrooms, squarefeet, minpricerange, maxpricerange in the object
+    # create a list that stores objects of the class FloorPlan
+    # create an object of the class FloorPlan
+    # store the name, description, bedrooms, bathrooms, squarefeet, minpricerange, maxpricerange in the object
 
     FloorPlanList = []
 
-    siteid = '4527024' #not sure if this changes or not (pmalden)
+    # not sure if this changes or not (pmalden)
+    siteid = '4527024'
     selectedunitid = siteid
 
-    #for testing purposes
-    #print(siteid)
+    # for testing purposes
+    # print(siteid)
     #  we need to pass in, unit id, selectedunitsiteid, and floorplan id
     for i in range(NumberOfFloorPlans):
-        #if multiple units parse all of them
+        # if multiple units parse all of them
         for j in range(len(Floorplans[i]['UnitIds'])):
             FloorPlan = {
                 'Name': Floorplans[i]['Name'],
-                'ID' : Floorplans[i]['Id'],
+                'ID': Floorplans[i]['Id'],
                 'UnitID': Floorplans[i]['UnitIds'][j],
                 'TimeStamp': functions.EpochTimeString,
                 'Bedrooms': Floorplans[i]['Bedrooms'],
@@ -74,14 +77,14 @@ if response.status_code == 200:
             }
             FloorPlanList.append(FloorPlan)
 
-    #for i in range(len(FloorPlanList)):
-        #print(FloorPlanList[i])
-        #print('\n')
+    # for i in range(len(FloorPlanList)):
+        # print(FloorPlanList[i])
+        # print('\n')
 
-    #pass in objects to find pricing next
+    # pass in objects to find pricing next
 
-    #create list of objects to use for each unit's price
-    #UnitPriceList = []
+    # create list of objects to use for each unit's price
+    # UnitPriceList = []
 
     for FloorPlan in FloorPlanList:
         json_data = {
@@ -99,29 +102,30 @@ if response.status_code == 200:
             },
         }
 
-        response1 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/', params=params, headers=headers, json=json_data)
+        response1 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/',
+                                 params=params, headers=headers, json=json_data)
 
         if response1.status_code == 200:
             # convert the response to json
             json_data1 = response1.json()
 
-            #try catch (needs to be fixed in the future)
+            # try catch (needs to be fixed in the future)
             try:
-                MonthlyCostLength = len(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'])
+                MonthlyCostLength = len(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2][
+                                            'UnitDetails']['PricePlans'])
                 MonthlyCostDict = {}
                 for i in range(MonthlyCostLength):
                     Months = str(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
                             'PricePlans'][i]['DurationInMonths'])
-                    Cost = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['PricePlans'][
-                            i]['MonthlyRent']
+                    Cost = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                        'PricePlans'][i]['MonthlyRent']
                     MonthlyCostDict.update({Months: Cost})
                 FloorPlan['RentTermPrice'] = MonthlyCostDict
 
             except:
-                #delete unit if unable to find pricing
+                # delete unit if unable to find pricing
                 functions.logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
-                #fix this to work with different move in dates
-
+                # fix this to work with different move in dates
 
                 FloorPlanList.remove(FloorPlan)
 
@@ -142,7 +146,7 @@ if response.status_code == 200:
         raise
 
 elif response.status_code == 401:
-        functions.logging.error('401 error')
+    functions.logging.error('401 error')
 
 else:
     functions.logging.error('Not 401 or 200 response')
