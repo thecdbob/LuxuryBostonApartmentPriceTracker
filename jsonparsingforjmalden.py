@@ -7,10 +7,22 @@ from string import ascii_uppercase, ascii_lowercase, digits
 import requests
 import logging
 import pymongo
+import sys
 from pymongo import MongoClient
 
-logging.basicConfig(filename='logging.log', level=logging.DEBUG)
+
+#add second website into this, so we can parse data from both website I l
+
+logging.basicConfig(level=logging.DEBUG, handlers=[
+    logging.FileHandler('logging.log'),
+    logging.StreamHandler(sys.stdout)
+])
 logging.info('Running through program')
+
+#convert epoch time to date month year in the format of mm/dd/yyyy
+def epoch_to_date(epoch_time):
+    return time.strftime('%m/%d/%Y', time.localtime(epoch_time))
+
 
 population = ascii_uppercase + ascii_lowercase + digits
 def char_gen(n):
@@ -91,6 +103,8 @@ if response.status_code == 200:
                 'ID' : Floorplans[i]['Id'],
                 'UnitID': Floorplans[i]['UnitIds'][j],
                 'TimeStamp': Timestamp,
+                'Bedrooms': Floorplans[i]['Bedrooms'],
+                'Bathrooms': Floorplans[i]['Bathrooms'],
             }
             FloorPlanList.append(FloorPlan)
 

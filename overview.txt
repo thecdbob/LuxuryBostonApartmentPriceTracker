@@ -56,3 +56,9 @@ Overiew of what will be used:
     mongodb is currently complaing about the lack of an extension
 
     Mongodb implimentation now works, add support for second rental site now
+
+    rename current name to another function, make new main that uses different functions based on site names
+
+    add bedroom and bathroom count to json data
+
+    add move in data, and make it dynamic
