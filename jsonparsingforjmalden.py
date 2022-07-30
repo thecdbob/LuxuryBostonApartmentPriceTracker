@@ -1,37 +1,9 @@
-import base64
-import time
-import uuid
-import json
-from random import choices
-from string import ascii_uppercase, ascii_lowercase, digits
 import requests
-import logging
-import pymongo
-import sys
-from pymongo import MongoClient
 
+#file where functions are stored
+import functions
 
-#add second website into this, so we can parse data from both website I l
-
-logging.basicConfig(level=logging.DEBUG, handlers=[
-    logging.FileHandler('logging.log'),
-    logging.StreamHandler(sys.stdout)
-])
-logging.info('Running through program')
-
-#convert epoch time to date month year in the format of mm/dd/yyyy
-def epoch_to_date(epoch_time):
-    return time.strftime('%m/%d/%Y', time.localtime(epoch_time))
-
-
-population = ascii_uppercase + ascii_lowercase + digits
-def char_gen(n):
-    return str.join('', choices(population, k=n))
-
-token = base64.b64encode(str.encode(char_gen(1) + '236070A81C6067EA630B5920B65E2A22' + char_gen(3) + 'A0909810A6D132832E28EF6DA18EC77C' + char_gen(5) + base64.b64encode(str.encode(str(int(time.time() * 1000)))).decode() + char_gen(7))).decode()
-#print(token)
-
-session_id = str(uuid.uuid4())
+functions.logging.info('Running through program')
 
 headers = {
     'authority': 'leasing.realpage.com',
@@ -47,14 +19,14 @@ headers = {
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'same-site',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
-    'xyz': token,
+    'xyz': functions.token,
 }
 
 params = {
     'BpmId': 'OLL.WorkflowStartUp',
     'BpmSequence': '0',
     'LogSequence': '3',
-    'ClientSessionID': session_id,
+    'ClientSessionID': functions.session_id,
 }
 
 response = requests.get('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/', params=params, headers=headers)
@@ -70,14 +42,8 @@ if response.status_code == 200:
 
     # variables for to get names for pricing
 
-    Timestamp = str(int(time.time() * 1000))
-
     # add i to the variable because it won't work right now
     Floorplans = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans']
-    #Name = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Name']
-    #Id = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Id']
-    #UnitIds = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['UnitIds']
-    #Descriptions = json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Description']
 
     # count number of elements in the json data for 'FloorPlans'
     NumberOfFloorPlans = len(json_data['Workflow']['ActivityGroups'][0]['GroupActivities'][0]['Floorplans'])
@@ -102,7 +68,7 @@ if response.status_code == 200:
                 'Name': Floorplans[i]['Name'],
                 'ID' : Floorplans[i]['Id'],
                 'UnitID': Floorplans[i]['UnitIds'][j],
-                'TimeStamp': Timestamp,
+                'TimeStamp': functions.EpochTimeString,
                 'Bedrooms': Floorplans[i]['Bedrooms'],
                 'Bathrooms': Floorplans[i]['Bathrooms'],
             }
@@ -127,7 +93,7 @@ if response.status_code == 200:
             'LeasingIntent': 'SearchUnit',
             'AppStateParams': {
                 'FloorplanId': '8597091',
-                'MoveInDate': '07/31/2022', #change to dynamic date
+                'MoveInDate': functions.epoch_to_date(functions.EpochTimeInt),
                 'UnitId': FloorPlan['UnitID'],
                 'SelectedUnitSiteId': selectedunitid,
             },
@@ -153,36 +119,30 @@ if response.status_code == 200:
 
             except:
                 #delete unit if unable to find pricing
-                logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
+                functions.logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
+                #fix this to work with different move in dates
+
+
                 FloorPlanList.remove(FloorPlan)
 
-            logging.info('Updated prices for Floor Plan List')
-
+            functions.logging.info('Updated prices for Floor Plan List')
 
         else:
-            logging.error('Non 200 response in response1')
+            functions.logging.error('Non 200 response in response1')
     print('Updated prices for Floor Plan List')
     print(FloorPlanList)
 
     try:
-        #connect to mongodb free database
-        #currently complaing about pymongo with the srv extra
 
-        client = pymongo.MongoClient("mongodb+srv://cdbob:xca8xbp9vxa.gnt1DZR@cluster0.yspvvbs.mongodb.net/?retryWrites=true&w=majority")
-        db = client.test
-
-        #"mongodb+srv://cdbob:xca8xbp9vxagnt1DZR@cluster0.yspvvbs.mongodb.net/?retryWrites=true&w=majority"
-        db = client.free
-        collection = db.floorplans
-        collection.insert_many(FloorPlanList)
+        functions.collection.insert_many(FloorPlanList)
         print('Inserted into MongoDB')
     except:
         print('Unable to insert into MongoDB')
-        logging.error('Unable to insert into MongoDB')
+        functions.logging.error('Unable to insert into MongoDB')
         raise
 
 elif response.status_code == 401:
-        logging.error('401 error')
+        functions.logging.error('401 error')
 
 else:
-    logging.error('Not 401 or 200 response')
+    functions.logging.error('Not 401 or 200 response')
