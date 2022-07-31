@@ -33,10 +33,17 @@ dayinseconds = 86400
 def epoch_to_date(epoch_time):
     return datetime.datetime.utcfromtimestamp(epoch_time).strftime('%m/%d/%Y')
 
+print(epoch_to_date(1659330000000 / 1000))
+                     # 1659234913
+print(EpochTimeInt)
 # to be used in future to generate data for units with different move in date
 # interates through current data to two weeks beyond
 # for i in range(14):
     # print(epoch_to_date(EpochTimeInt + dayinseconds*i))
+
+#parse this with regex tomorrow and run through it, create an external function use within your code
+
+# Date(-62135596800000-0600)
 '''
 end of time section of functions
 '''

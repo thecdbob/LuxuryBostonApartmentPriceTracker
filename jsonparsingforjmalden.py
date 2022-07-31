@@ -1,7 +1,11 @@
 import requests
+import json
 
 # file where functions are stored
 import functions
+
+# convert null to none in json dictionaries
+null = None
 
 functions.logging.info('Running through program')
 
@@ -40,7 +44,7 @@ if response.status_code == 200:
     # format the json data
 
     # used for initially creating the code
-    # print(json.dumps(json_data, indent=4))
+    #print(json.dumps(json_data, indent=4))
 
     # variables for to get names for pricing
 
@@ -85,6 +89,10 @@ if response.status_code == 200:
 
     # create list of objects to use for each unit's price
     # UnitPriceList = []
+    #print(FloorPlanList)
+    #print(len(FloorPlanList))
+
+    # we need values to use to pass into our next function see we need to go through it once to get those values
 
     for FloorPlan in FloorPlanList:
         json_data = {
@@ -110,7 +118,61 @@ if response.status_code == 200:
             json_data1 = response1.json()
 
             # try catch (needs to be fixed in the future)
+
+            # replacement for try except block of code
+
+            # parse json data1 to get the pricing information
+
             try:
+                json.dumps(json_data1, indent=4)
+                print(json.dumps(json_data1, indent=4))
+                print('\n')
+            except:
+                print('Error')
+                print('\n')
+                continue
+
+            if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'] == None:
+                if(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['AvailableDate'] != None):
+                    print('Unit has Avaliable Date')
+                print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'])
+                #if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['MoveinDateRange'] == None:
+                    #print('Unit has no Move in Date Range')
+                    #continue
+                #else:
+                    #print('Unit has has Avaliable Date')
+            else:
+                print(FloorPlan['UnitID'])
+                print(' is null')
+
+
+
+            '''
+            
+            # we need to check the json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['ReadyForMoveInDate']
+            # we also need to check the json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['AvailableForMoveInDate']
+            # we also need to check the json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['MoveinDateRange']
+            # we also need to check the json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['MoveinDateRange']
+            
+            
+            # modify this block of code to change the date if it doesn't work
+            MonthlyCostLength = len(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2][
+                                        'UnitDetails']['PricePlans'])
+            MonthlyCostDict = {}
+            
+            for i in range(MonthlyCostLength):
+    
+                Months = str(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                                 'PricePlans'][i]['DurationInMonths'])
+                Cost = json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                    'PricePlans'][i]['MonthlyRent']
+                MonthlyCostDict.update({Months: Cost})
+            FloorPlan['RentTermPrice'] = MonthlyCostDict
+            '''
+
+            '''
+            try:
+                # modify this block of code to change the date if it doesn't work
                 MonthlyCostLength = len(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2][
                                             'UnitDetails']['PricePlans'])
                 MonthlyCostDict = {}
@@ -121,25 +183,27 @@ if response.status_code == 200:
                         'PricePlans'][i]['MonthlyRent']
                     MonthlyCostDict.update({Months: Cost})
                 FloorPlan['RentTermPrice'] = MonthlyCostDict
-
+    
             except:
                 # delete unit if unable to find pricing
                 functions.logging.error('Move in Date invalid ' + FloorPlan['UnitID'])
                 # fix this to work with different move in dates
-
+    
                 FloorPlanList.remove(FloorPlan)
-
+    
             functions.logging.info('Updated prices for Floor Plan List')
+            '''
 
         else:
             functions.logging.error('Non 200 response in response1')
-    print('Updated prices for Floor Plan List')
-    print(FloorPlanList)
+    print('keep block happy')
+    #print('Updated prices for Floor Plan List')
+    #print(FloorPlanList)
 
     try:
-
-        functions.collection.insert_many(FloorPlanList)
-        print('Inserted into MongoDB')
+        print('keep try block happy')
+        #functions.collection.insert_many(FloorPlanList)
+        #print('Inserted into MongoDB')
     except:
         print('Unable to insert into MongoDB')
         functions.logging.error('Unable to insert into MongoDB')
