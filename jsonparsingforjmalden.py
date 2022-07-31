@@ -123,6 +123,7 @@ if response.status_code == 200:
 
             # parse json data1 to get the pricing information
 
+            '''
             try:
                 json.dumps(json_data1, indent=4)
                 print(json.dumps(json_data1, indent=4))
@@ -131,16 +132,21 @@ if response.status_code == 200:
                 print('Error')
                 print('\n')
                 continue
+            '''
 
-            if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'] == None:
-                if(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['AvailableDate'] != None):
+
+            if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'] != None:
+                print('hi')
+                print(FloorPlan)
+                if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
+                    'AvailableDate'] != None:
                     print('Unit has Avaliable Date')
-                print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'])
-                #if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['MoveinDateRange'] == None:
+                    print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'])
+                    #if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['MoveinDateRange'] == None:
                     #print('Unit has no Move in Date Range')
                     #continue
-                #else:
-                    #print('Unit has has Avaliable Date')
+                else:
+                    print('Unit has no Avaliable Date')
             else:
                 print(FloorPlan['UnitID'])
                 print(' is null')
