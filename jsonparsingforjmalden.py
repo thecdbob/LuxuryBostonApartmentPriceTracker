@@ -36,6 +36,17 @@ params = {
     'ClientSessionID': functions.session_id,
 }
 
+#json for second request
+#headers are the same
+#params 2
+params_2 = {
+    'BpmId': 'OLL.SearchFloorPlan',
+    'BpmSequence': '0',
+    'LogSequence': '9',
+    'ClientSessionID': functions.session_id,
+}
+
+
 response = requests.get('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/workflowstartup/v1/4527024/',
                         params=params, headers=headers)
 
@@ -104,7 +115,7 @@ if response.status_code == 200:
             'ActivityID': 'fd81ca37-2ea3-48b4-bc30-1270f60cbe87',
             'IsSkipStep': False,
             'PmcId': '2507719',
-            'SiteId': '4527024',
+            'SiteId': siteid,
             'LeasingIntent': 'SearchUnit',
             'AppStateParams': {
                 'FloorplanId': FloorPlan['ID'],
@@ -113,6 +124,17 @@ if response.status_code == 200:
             },
         }
 
+        #maybe this will be better to fix later
+        response_2 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/',
+                 params=params_2, headers=headers, json=json_data_2)
+
+        json_data_2 = response_2.json()
+        print(FloorPlan['ID'])
+        print(FloorPlan['UnitID'])
+        print(json.dumps(json_data_2, indent=4))
+        print('through the floorplan loop')
+
+    print("third request starts here")
     #this is the third function we will use to get the pricing, that was already here
     for FloorPlan in FloorPlanList:
         json_data = {
@@ -129,7 +151,6 @@ if response.status_code == 200:
                 'SelectedUnitSiteId': selectedunitid,
             },
         }
-
 
         response1 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/',
                                  params=params, headers=headers, json=json_data)

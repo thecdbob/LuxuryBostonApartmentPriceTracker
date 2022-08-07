@@ -70,3 +70,7 @@ Overiew of what will be used:
     use the binary search method to find the start date of the object, as well as the end date
 
     figure out and impliment second request between the two to get move in dates
+
+    #figure out loop in second request and make sure it is changing the unit, currently the values
+    for date are not changing, need to figure out why
+    """
