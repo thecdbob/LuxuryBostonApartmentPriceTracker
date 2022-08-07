@@ -6,6 +6,8 @@ import functions
 
 # convert null to none in json dictionaries
 null = None
+true = True
+false = False
 
 functions.logging.info('Running through program')
 
@@ -94,6 +96,24 @@ if response.status_code == 200:
 
     # we need values to use to pass into our next function see we need to go through it once to get those values
 
+    #to find the start and end date of the units, we need to get those values
+    # if this is repeated we can delete it later
+    for Floorplan in FloorPlanList:
+        json_data_2 = {
+            'NavigationMode': 2,
+            'ActivityID': 'fd81ca37-2ea3-48b4-bc30-1270f60cbe87',
+            'IsSkipStep': False,
+            'PmcId': '2507719',
+            'SiteId': '4527024',
+            'LeasingIntent': 'SearchUnit',
+            'AppStateParams': {
+                'FloorplanId': FloorPlan['ID'],
+                'MoveInDate': functions.epoch_to_date(functions.EpochTimeInt),
+                'switchToWaitlist': False,
+            },
+        }
+
+    #this is the third function we will use to get the pricing, that was already here
     for FloorPlan in FloorPlanList:
         json_data = {
             'NavigationMode': 2,
@@ -103,12 +123,13 @@ if response.status_code == 200:
             'SiteId': siteid,
             'LeasingIntent': 'SearchUnit',
             'AppStateParams': {
-                'FloorplanId': '8597091',
+                'FloorplanId': FloorPlan['ID'],
                 'MoveInDate': functions.epoch_to_date(functions.EpochTimeInt),
                 'UnitId': FloorPlan['UnitID'],
                 'SelectedUnitSiteId': selectedunitid,
             },
         }
+
 
         response1 = requests.put('https://leasing.realpage.com/RP.Leasing.AppService.WebHost/appstate/v1/',
                                  params=params, headers=headers, json=json_data)
@@ -116,6 +137,11 @@ if response.status_code == 200:
         if response1.status_code == 200:
             # convert the response to json
             json_data1 = response1.json()
+
+            #find the move in date of the unit
+            #if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'] == None:
+                    #perform a binary search to find the move in date of the unit
+                    #'MoveInDate': functions.epoch_to_date(functions.EpochTimeInt),
 
             # try catch (needs to be fixed in the future)
 
@@ -134,22 +160,29 @@ if response.status_code == 200:
                 continue
             '''
 
+            #print('pre unit details')
+            #print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2])
 
             if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'] != None:
-                print('hi')
-                print(FloorPlan)
+                #print('hi')
+                #print(FloorPlan)
+                #print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails']['AvailableDate'])
+                print('made it through unit details')
+                #print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2])
                 if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'][
-                    'AvailableDate'] != None:
-                    print('Unit has Avaliable Date')
-                    print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'])
+                    'NoLeaseTermAvailable'] == False:
+                    print(FloorPlan['UnitID'] + ' has Avaliable Date')
+                    #print(json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['UnitDetails'])
+
                     #if json_data1['Workflow']['ActivityGroups'][0]['GroupActivities'][2]['MoveinDateRange'] == None:
                     #print('Unit has no Move in Date Range')
                     #continue
                 else:
-                    print('Unit has no Avaliable Date')
+
+                    print(FloorPlan['UnitID'] + ' has no Avaliable Date')
             else:
-                print(FloorPlan['UnitID'])
-                print(' is null')
+                print(FloorPlan['UnitID'] + ' is null')
+                #print(json_data1['Workflow'])
 
 
 

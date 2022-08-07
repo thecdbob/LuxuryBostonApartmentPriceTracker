@@ -62,3 +62,11 @@ Overiew of what will be used:
     add bedroom and bathroom count to json data
 
     add move in data, and make it dynamic
+
+    continue to look through json code and figure out how to sort rooms, currently, not sure if the input date changes
+    the data we are seeing when you get back change the input date to be a day + 1, 2, 3, 4, 5, 6 days ahead and see
+    if the number of results changes
+
+    use the binary search method to find the start date of the object, as well as the end date
+
+    figure out and impliment second request between the two to get move in dates

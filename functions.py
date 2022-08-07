@@ -28,14 +28,17 @@ time section of functions
 EpochTimeInt = int(time.time())
 EpochTimeString = str(EpochTimeInt)
 dayinseconds = 86400
+monthinseconds = 2629743 # use this to move forward the units if it is a problem
 
 # convert epoch time to date month year in the format of mm/dd/yyyy
 def epoch_to_date(epoch_time):
     return datetime.datetime.utcfromtimestamp(epoch_time).strftime('%m/%d/%Y')
 
-print(epoch_to_date(1659330000000 / 1000))
+#print(epoch_to_date(1659330000000 / 1000))
                      # 1659234913
 print(EpochTimeInt)
+print(epoch_to_date(EpochTimeInt))
+print('function block')
 # to be used in future to generate data for units with different move in date
 # interates through current data to two weeks beyond
 # for i in range(14):
@@ -84,3 +87,8 @@ collection = db.floorplans
 '''
 End of MongoDB section of functions
 '''
+
+'''constants'''
+
+
+'''end of constants'''
