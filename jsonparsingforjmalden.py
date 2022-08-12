@@ -106,7 +106,7 @@ if response.status_code == 200:
     #print(len(FloorPlanList))
 
     # we need values to use to pass into our next function see we need to go through it once to get those values
-
+    print("second request")
     #to find the start and end date of the units, we need to get those values
     # if this is repeated we can delete it later
     for Floorplan in FloorPlanList:
@@ -133,6 +133,10 @@ if response.status_code == 200:
         print(FloorPlan['UnitID'])
         print(json.dumps(json_data_2, indent=4))
         print('through the floorplan loop')
+        #if FloorPlan['ID'] ==
+        for i in json_data_2['Workflow']['ActivityGroups'][0]['GroupActivities'][1]['Units']:
+            print(json_data_2['Workflow']['ActivityGroups'][0]['GroupActivities'][1]['Units'])
+        print("json 2 unit id")
 
     print("third request starts here")
     #this is the third function we will use to get the pricing, that was already here
